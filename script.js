@@ -29,8 +29,9 @@
     var email = document.getElementById("email");
     var password  = document.getElementById("password");
     const promise = auth.signInWithEmailAndPassword(email.value,password.value);
-    promise.try(promise=>{
+    promise.then(promise=>{
         console.log(promise.message);
+        window.location.href = 'Home.html';
     })
     promise.catch(e=>alert(e.message));
     
@@ -54,3 +55,5 @@
       alert("No Active user Found")
     }
   })
+
+  
